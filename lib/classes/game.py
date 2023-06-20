@@ -19,11 +19,11 @@ class Game:
     
     def average_score(self, player):
         count = 0
+        total = 0
         for result in self.results:
             if result.player == player:
-                count += result.score
-            else:
-                continue
-
-        return count / len(self.results)
+                total += result.score
+                count += 1
+                
+        return total / count 
         

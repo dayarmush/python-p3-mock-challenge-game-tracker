@@ -6,6 +6,8 @@ class Result:
         self.player = player
         self.game = game
         self.score = score
+
+        #self.player/game optional
         player.results.append(self)
         game.results.append(self)
 
@@ -42,7 +44,5 @@ class Result:
         else:
             raise Exception(' invalid game type')
         
-
-
     
 

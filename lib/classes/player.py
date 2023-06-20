@@ -18,13 +18,15 @@ class Player:
         return [result.game for result in self.results]
     
     def has_played_game(self, game):
-        has_game = [result for result in self.results if result.game == game]
-        return not not has_game
+        # return bool([result for result in self.results if result.game == game])
+        return game in self.games_played()
+       
     
     def num_times_played(self, game):
-        counter = 0 
-        for result in self.results:
-            if result.game == game:
-                counter += 1
-        return counter
+        counter = [result for result in self.results if result.game == game]
+        # counter = 0 
+        # for result in self.results:
+        #     if result.game == game:
+        #         counter += 1
+        return len(counter) # counter
 
